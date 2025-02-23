@@ -94,7 +94,7 @@ def play_audio(file_path):
     if os.path.exists(file_path):
         os.remove(file_path)
 
-        
+
 @app.post("/speak/")
 async def speak(data: TextInput):
     text = data.text
@@ -102,6 +102,3 @@ async def speak(data: TextInput):
     play_audio(audio_file)
     return {"message": "Speaking..."}
 
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=8000)
