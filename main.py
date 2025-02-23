@@ -102,3 +102,7 @@ async def speak(data: TextInput):
     play_audio(audio_file)
     return {"message": "Speaking..."}
 
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
